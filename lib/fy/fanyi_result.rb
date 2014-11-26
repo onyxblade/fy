@@ -66,10 +66,11 @@ class FanyiResult
     " [ #{phonetic} ]".color(:magenta)
   end
 
-  def first_line
-    line = ' '
-    line += query_words
-    line += fancy_phonetic if phonetic
+  def puts_first_line
+    first_line = ' '
+    first_line += query_words
+    first_line += fancy_phonetic if phonetic
+    puts first_line, ''
   end
 
   def dict_explains_array
@@ -123,7 +124,7 @@ class FanyiResult
   end
 
   def puts_result
-    puts first_line, ''
+    puts_first_line
     puts_yd_result
     puts_web_result_array if web_result_array
   end
