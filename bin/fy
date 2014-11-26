@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/fy/fanyi_result'
+
+help = <<HELP
+fanyi.rb: Translate tools in the command line
+  $ fy word
+  $ fy world peace
+  $ fy chinglish
+HELP
+
+if ARGV.empty?
+  puts help
+else
+  fy_result = FanyiResult.new(ARGV)
+  fy_result.puts_result
+end
