@@ -1,31 +1,58 @@
 # Fy
 
-TODO: Write a gem description
+A translate tool in your command line, inspired by [Fanyi](https://github.com/afc163/fanyi).
+
+![](http://dd-personal.qiniudn.com/Screenshot from 2014-11-25 17:21:23.png)
+
+---
 
 ## Installation
-
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'fy'
+```bash
+$ gem install fy
 ```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install fy
 
 ## Usage
 
-TODO: Write usage instructions here
+Translation data is fetched from [fanyi.youdao.com](http://fanyi.youdao.com),
+and only support translation between Chinese and English.
 
-## Contributing
+Translate one word.
 
-1. Fork it ( https://github.com/[my-github-username]/fy/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+```bash
+$ fy love
+```
+
+```
+ love  [ lʌv ]
+
+ - n. 恋爱；亲爱的；酷爱；喜爱的事物；爱情，爱意；疼爱；热爱；爱人，所爱之物
+ - v. 爱，热爱；爱戴；赞美，称赞；喜爱；喜好；喜欢；爱慕
+ - n. （英）洛夫（人名）
+
+ 1. Love
+    爱,爱情,恋爱
+ 2. Endless Love
+    无尽的爱,不了情,蓝色生死恋
+ 3. puppy love
+    早恋,青春期恋爱,初恋
+```
+
+More words.
+
+```bash
+$ fy make love
+```
+
+Support Chinese, even sentence.
+
+```bash
+$ fy 和谐
+```
+
+```bash
+$ fy 子非鱼焉知鱼之乐
+```
+
+## LICENSE
+
+MIT.
