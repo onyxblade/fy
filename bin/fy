@@ -12,6 +12,6 @@ HELP
 if ARGV.empty?
   puts help
 else
-  fy_result = FanyiResult.new(ARGV)
+  fy_result = Fy::FanyiResult.new(ARGV)
   fy_result.puts_result
 end
