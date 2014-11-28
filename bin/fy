@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require 'fy/fanyi_result'
+require 'fy'
 
 help = <<HELP
 fanyi.rb: Translate tools in the command line
