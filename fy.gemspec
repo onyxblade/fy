@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.summary               = %q{A translate tool in your command line}
   spec.homepage              = 'https://github.com/dd1994/fy'
   spec.license               = 'MIT'
-  spec.required_ruby_version = '>=2.1.5'
+  spec.required_ruby_version = '>=1.9.3'
   spec.has_rdoc              = false
   spec.files                 = `git ls-files -z`.split("\x0")
   spec.executables           = ['fy']
