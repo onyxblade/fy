@@ -11,7 +11,7 @@ HELP
 
 if ARGV.empty?
   puts help
-  eixt 1
+  exit 1
 else
   fy_result = Fy::FanyiResult.new(ARGV)
   fy_result.puts_result
