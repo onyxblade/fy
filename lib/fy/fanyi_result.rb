@@ -1,7 +1,7 @@
-require 'uri'
-require 'net/http'
-require 'json'
-require 'rainbow/ext/string'
+require "uri"
+require "net/http"
+require "json"
+require "rainbow/ext/string"
 
 module Fy
   class FanyiResult
@@ -13,15 +13,15 @@ module Fy
     end
 
     def api_url
-      'http://fanyi.youdao.com/openapi.do?keyfrom=JIANGDi&key=891853312&type=data&doctype=json&version=1.1&q='
+      "http://fanyi.youdao.com/openapi.do?keyfrom=JIANGDi&key=891853312&type=data&doctype=json&version=1.1&q="
     end
 
     def query_words
-      words_array.join(' ')
+      words_array.join(" ")
     end
 
     def escape_words
-      URI.escape(words_array.join('+'))
+      URI.escape(words_array.join("+"))
     end
 
     def query_url
@@ -41,7 +41,7 @@ module Fy
     end
 
     def yd_translations_array
-      result_hash['translation']
+      result_hash["translation"]
     end
 
     def fancy_translation(yd_translation)
@@ -56,11 +56,11 @@ module Fy
     end
 
     def dict_info
-      result_hash['basic']
+      result_hash["basic"]
     end
 
     def phonetic
-      dict_info['phonetic'] if dict_info
+      dict_info["phonetic"] if dict_info
     end
 
     def fancy_phonetic
@@ -68,18 +68,18 @@ module Fy
     end
 
     def puts_first_line
-      first_line = ' '
+      first_line = " "
       first_line += query_words
       first_line += fancy_phonetic if phonetic
-      puts first_line, ''
+      puts first_line, ""
     end
 
     def dict_explains_array
-      dict_info['explains'] if dict_info
+      dict_info["explains"] if dict_info
     end
 
     def fancy_dict_explain(explain)
-      ' - ' + "#{explain}".color(:green)
+      " - " + "#{explain}".color(:green)
     end
 
     def puts_dict_explains
@@ -90,7 +90,7 @@ module Fy
     end
 
     def web_result_array
-      result_hash['web']
+      result_hash["web"]
     end
 
     def fancy_web_result_value(web_result_value)
@@ -107,8 +107,8 @@ module Fy
 
     def puts_web_result_array
       web_result_array.each_with_index do |web_result_hash, i|
-        puts " #{i+1}. #{fancy_web_result_key(web_result_hash['key'])}"
-        puts fancy_web_result_value(web_result_hash['value'])
+        puts " #{i+1}. #{fancy_web_result_key(web_result_hash["key"])}"
+        puts fancy_web_result_value(web_result_hash["value"])
       end
       puts
     end
