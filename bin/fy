@@ -7,9 +7,25 @@ fanyi.rb: Translate tools in the command line
   $ fy word
   $ fy world peace
   $ fy chinglish
+  $ fy
+    enter the loop mode, ctrl+c to exit
 HELP
 
 if ARGV.empty?
+  begin
+    loop do
+      fy_input = gets.chomp
+      # 输入为空时继续循环
+      next if fy_input == ''
+      fy_result = Fy::FanyiResult.new(fy_input.split(' '))
+      fy_result.puts_result
+    end
+  # 捕获终止信号
+  rescue Interrupt
+    puts 'bye~'
+    exit 1
+  end
+elsif %w{-h --help}.any?{ |c| ARGV.include? c }
   puts help
   exit 1
 else
