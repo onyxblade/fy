@@ -43,6 +43,15 @@ More words.
 $ fy make love
 ```
 
+~~More more words.~~  Loop mode, CTRL+C to exit.
+```bash
+$ fy
+> words
+> to
+> translate
+```
+
+
 Support Chinese, even sentence.
 
 ```bash
